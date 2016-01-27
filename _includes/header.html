@@ -12,15 +12,9 @@
         href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
     {% endif %}
   {% endfor %}
-  <a href="https://github.com/StephanDollberg" target="_blank" class="page-link">Github</a>
-  <a href="https://stackoverflow.com/users/893693/inf?tab=profile" target="_blank" class="page-link">StackOverflow</a>
+  <a href="mailto:{{ site.email }}" class="page-link github-link"><i class="fa fa-envelope"></i></a>
+  <a href="https://github.com/StephanDollberg" target="_blank" class="page-link github-link"><i class="fa fa-github"></i></a>
+  <a href="https://stackoverflow.com/users/893693/inf?tab=profile" target="_blank" class="page-link github-link"><i class="fa fa-stack-overflow"></i></a>
   <!-- <a href="{{ "/feed.xml" | prepend: site.baseurl }}" target="_blank" class="page-link">RSS</a> -->
-  {% if site.github_repo %}
-  <a href="http://github.com/{{ site.github_repo }}"
-    target="_blank"
-    class="page-link github-link">
-    <img src="{{ "/images/github-repo.png" | prepend: site.baseurl }}" alt="Github Repository">
-    Source</a>
-  {% endif %}
   </div>
 </header>
