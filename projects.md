@@ -10,7 +10,7 @@ Overview of my most important personal projects. Headers are links. Feedback or 
 
 ## [Dict](https://github.com/stephandollberg/dict)
 
-Cache friendly open addressed hash table implementation in C++. `dict` is supposed to be a drop-in replacement for `std::unordered_map`. It's goal is to offer a performance boost while providing an almost standard conforming interface.
+Cache friendly open addressed hash table implementation in C++. `dict` is supposed to be a drop-in replacement for `std::unordered_map`. Its goal is to offer a performance boost while providing an almost standard conforming interface.
 
 Currently, we see a speedup of at least a factor of two in almost all tests (in some even more). The only test in which we perform worse is the case of very heavy clustering and lookup failure.
 
