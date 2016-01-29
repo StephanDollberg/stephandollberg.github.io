@@ -2,7 +2,7 @@
 layout: page
 title: Projects
 permalink: /projects/
-comments: true
+comments: false
 author_footer: false
 ---
 
@@ -42,7 +42,7 @@ Vyo is written in Go.
 
 ## [JWT Middleware for Go-Json-Rest](https://github.com/StephanDollberg/go-json-rest-middleware-jwt)
 
-This is a middleware for the Go-JSON-REST framework that provides JSON-Web-Token  authentication. It's goal is to stay simple and not require too much configuration.
+This is a middleware for the Go-JSON-REST framework that provides JSON-Web-Token  authentication. Its goal is to stay simple and not require too much configuration.
 
 Configuring the middleware is as simple as:
 
