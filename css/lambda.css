@@ -250,7 +250,7 @@ em {
   background: #fafafa;
   padding: 10px 12px;
   border-radius: 5px;
-  overflow: scroll;
+  overflow: auto;
 }
 
 /* terminal */
