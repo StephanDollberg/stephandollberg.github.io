@@ -47,14 +47,14 @@ This is a middleware for the Go-JSON-REST framework that provides JSON-Web-Token
 Configuring the middleware is as simple as:
 
 {% highlight go %}
-    jwt_middleware := &jwt.JWTMiddleware{
-        Key:        []byte("secret key"),
-        Realm:      "jwt auth",
-        Timeout:    time.Hour,
-        MaxRefresh: time.Hour * 24,
-        Authenticator: func(userId string, password string) bool {
-            return /* auth logic */
-        }}
+jwt_middleware := &jwt.JWTMiddleware{
+    Key:        []byte("secret key"),
+    Realm:      "jwt auth",
+    Timeout:    time.Hour,
+    MaxRefresh: time.Hour * 24,
+    Authenticator: func(userId string, password string) bool {
+        return /* auth logic */
+    }}
 {% endhighlight %}
 
 We also provide ready made handlers for logging in and refreshing tokens so that the user does not have to bother with creating tokens.
