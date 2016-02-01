@@ -2,7 +2,7 @@
 layout: page
 title: Talks
 permalink: /talks/
-comments: true
+comments: false
 author_footer: false
 ---
 

@@ -36,7 +36,7 @@ Outputs: `4 stars for Germany!`
 
 I was annoyed by constantly getting rickrolled by URL shorteners. `Vyo.be` keeps the domain visible on shortening. So no more rickrolling!
 
-For example, shortening a link to one of the blog posts [`https://dollberg.xyz/web/2016/01/28/Static-Site-Hosting-With-Github-Pages-And-Cloudflare/`](https://dollberg.xyz/web/2016/01/28/Static-Site-Hosting-With-Github-Pages-And-Cloudflare/) results in [`vyo.be/dollberg9cg8p`](vyo.be/dollberg9cg8p). We see that the domain name stays visible and some random chars are appended.
+For example, shortening a link to one of the blog posts [`https://dollberg.xyz/web/2016/01/28/Static-Site-Hosting-With-Github-Pages-And-Cloudflare/`](https://dollberg.xyz/web/2016/01/28/Static-Site-Hosting-With-Github-Pages-And-Cloudflare/) results in [`vyo.be/dollberg9cg8p`](https://vyo.be/dollberg9cg8p). We see that the domain name stays visible and some random chars are appended.
 
 Vyo is written in Go.
 
