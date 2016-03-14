@@ -294,3 +294,7 @@ em {
         display: none;
     }
 }
+
+.profile_roundcorners {
+    border-radius: 32px;
+}
