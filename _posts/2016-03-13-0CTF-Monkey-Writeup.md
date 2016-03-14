@@ -21,7 +21,7 @@ The task of the challenge is now to circumvent this policy. While there exist se
 
 My initial idea was to load the page via an image and then extract the data via html canvas elements. Second, was to load the flag page in an iframe and try to access it via some hacks of the `document.domain` property. However, both of those failed.
 
-At that point, two things came to my mind. First, I got suspicious of the hint which mentioned that the monkey will surf for two minutes on the page. Second, I remembered attacks on smart home devices in local home networks that used DNS to circumvent the same-origin policy (can't find the link anymore, unfortunately). At this point, I was totally sure that this must be the way to solve it.
+At that point, two things came to my mind. First, I got suspicious of the hint which mentioned that the monkey will surf for two minutes on the page. Second, I remembered attacks on smart home devices in local home networks that used DNS to circumvent the same-origin policy. At this point, I was totally sure that this must be the way to solve it.
 
 Specifically, the attack works like this. The victim browses a page that you control (e.g.: `foo.dollberg.xyz`, the page which we submit). This page contains some javascript that accesses the endpoint of the flag (`/secret`) after a certain amount time (110 seconds). If the DNS entry of `foo.dollberg.xyz` has a very short TTL (60 seconds), the delayed request has to do an additional DNS request. However, by changing the DNS record in the meantime, the domain will resolve to the victim page (`127.0.0.1`).
 
@@ -66,5 +66,4 @@ As the DNS record for `foo.dollberg.xyz` is still cached it is loaded from the c
 
     0ctf{monkey_likes_banananananananaaaa}
 
-For a change, this was a really cool web challenge and not the usual PHP crap.
-
+For a change, this was a really cool web challenge and not the usual PHP crap. In the meantime, I have learned from other write-ups that the attack is generally known as [DNS rebinding](https://en.wikipedia.org/wiki/DNS_rebinding).
