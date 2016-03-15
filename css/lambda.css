@@ -276,7 +276,7 @@ em {
         font-size: 14px;
     }
     .links .github-link {
-        float: none;
+        float: right;
     }
     .links .github-link img {
         display: none;
@@ -295,6 +295,8 @@ em {
     }
 }
 
-.profile_roundcorners {
+#profile_roundcorners {
+    width: 64px;
+    height: auto;
     border-radius: 32px;
 }
