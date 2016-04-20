@@ -6,7 +6,7 @@ comments: false
 author_footer: false
 ---
 
-My name is Stephan Dollberg. I am a Master student in Electrical Engineering and Information Technology. I am most passionate about building software that works.
+My name is Stephan Dollberg. I am a Systems Engineer at Cloudflare. I am most passionate about building software that works.
 
 I mostly code in C++, Python and Go. My main areas of interest are in systems engineering, such as concurrency, networking or simply optimizing data structures and algorithms.
 
