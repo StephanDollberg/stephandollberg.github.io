@@ -1,28 +1,36 @@
 <div class="entry">
 
-	<div class="entry-content">
+    <div class="entry-content">
 
-	  <header>
-	    <h1 class="entry-title"><a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a></h1>
-	    <p class="entry-meta">
-		    {{ page.date | date: "%b %-d, %y" }}
-		    {% if page.category %} • category: {{ page.category|capitalize }}{% endif %}
-	    </p>
-	  </header>
+      <header>
+        <h1 class="entry-title"><a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a></h1>
+        <p class="entry-meta">
+        {{ page.date | date: "%b %-d, %Y" }}
+        {% if page.category %} • Category: {{ page.category|capitalize }}{% endif %}
+        </p>
+      </header>
 
-	  <article class="entry-body">
-	  		{{ content }}
-	  </article>
+      <article class="entry-body">
+        {% if is_overview == true %}
+          {{ post.excerpt }}
+          {% if page.content contains site.excerpt_separator %}
+          <p><a href="{{ page.url | prepend: site.baseurl }}">Read more »</a></p>
+          {% endif %}
+	    {% else %}
+          {{ content }}
+        {% endif %}
+      </article>
 
   </div>
 
 </div>
-{% if content and page.author_footer != false %}
 
-	{% include post_footer.html %}
+{% if is_overview == nil and page.author_footer != false %}
 
-	{% if page.comments != false %}
-	    {% include disqus.html %}
-	{% endif %}
+       {% include post_footer.html %}
+
+       {% if page.comments != false %}
+           {% include disqus.html %}
+       {% endif %}
 
 {% endif %}
