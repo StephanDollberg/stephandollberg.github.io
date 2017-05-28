@@ -34,7 +34,7 @@ Outputs: `4 stars for Germany!`
 
 ## [Yotta](https://github.com/StephanDollberg/yotta)
 
-Yotta is basic http file server. It serves my personal blog [dollberg.xyz](https://dollberg.xyz).
+Yotta is a basic http file server. It serves my personal blog [dollberg.xyz](https://dollberg.xyz).
 
 It's main purpose is to build an epoll based event loop with all kinds of gimmicks. In addition, it's a performant file server that doesn't need 50 lines of config.
 
