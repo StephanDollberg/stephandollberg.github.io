@@ -32,13 +32,11 @@ int main() {
 
 Outputs: `4 stars for Germany!`
 
-## [Vyo.be](https://vyo.be)
+## [Yotta](https://github.com/StephanDollberg/yotta)
 
-I was annoyed by constantly getting rickrolled by URL shorteners. `Vyo.be` keeps the domain visible on shortening. So no more rickrolling!
+Yotta is basic http file server. It serves my personal blog [dollberg.xyz](https://dollberg.xyz).
 
-For example, shortening a link to one of the blog posts [`https://dollberg.xyz/web/2016/01/28/Static-Site-Hosting-With-Github-Pages-And-Cloudflare/`](https://dollberg.xyz/web/2016/01/28/Static-Site-Hosting-With-Github-Pages-And-Cloudflare/) results in [`vyo.be/dollberg9cg8p`](https://vyo.be/dollberg9cg8p). We see that the domain name stays visible and some random chars are appended.
-
-Vyo is written in Go.
+It's main purpose is to build an epoll based event loop with all kinds of gimmicks. In addition, it's a performant file server that doesn't need 50 lines of config.
 
 ## [JWT Middleware for Go-Json-Rest](https://github.com/StephanDollberg/go-json-rest-middleware-jwt)
 
