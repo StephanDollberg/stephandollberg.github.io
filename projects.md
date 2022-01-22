@@ -6,37 +6,19 @@ comments: false
 author_footer: false
 ---
 
-Overview of my most important personal projects. Headers are links. Feedback or help is welcome on all of those.
+Overview of some of my projects. See Github for the full collection.
 
-## [Dict](https://github.com/stephandollberg/dict)
+## [rredis](https://github.com/StephanDollberg/rredis)
 
-Cache friendly open addressed hash table implementation in C++. `dict` is supposed to be a drop-in replacement for `std::unordered_map`. Its goal is to offer a performance boost while providing an almost standard conforming interface.
+Something redis like (very far from it obviously). Some more Rust training and me playing around with io\_uring.
 
-Currently, we see a speedup of at least a factor of two in almost all tests (in some even more). The only test in which we perform worse is the case of very heavy clustering and lookup failure.
-
-Ongoing work is looking into advanced hashing techniques such as [Robin Hood Hashing](http://www.sebastiansylvan.com/post/robin-hood-hashing-should-be-your-default-hash-table-implementation/) and other optimizations.
-
-{% highlight cpp %}
-#include <iostream>
-#include <dict/dict.hpp>
-
-int main() {
-  io::dict<std::string, int> worldcups{ {"Germany", 4},
-                                        {"Brazil", 5},
-                                        {"France", 1}};
-
-  std::cout << worldcups["Germany"] << " stars for Germany!" << std::endl;
-}
-
-{% endhighlight %}
-
-Outputs: `4 stars for Germany!`
+Currently supports GET and SET and also has async command-logging to disk all powered by io\_uring.
 
 ## [Yotta](https://github.com/StephanDollberg/yotta)
 
-Yotta is a basic http file server. It serves my personal blog [dollberg.xyz](https://dollberg.xyz).
+Yotta is a basic http file server written in C++ and C.
 
-It's main purpose is to build an epoll based event loop with all kinds of gimmicks. In addition, it's a performant file server that doesn't need 50 lines of config.
+It's main purpose is to get some raw epoll action going with all kinds of things such as graceful upgrades. In addition, it's a performant file server that doesn't need 50 lines of config.
 
 ## [JWT Middleware for Go-Json-Rest](https://github.com/StephanDollberg/go-json-rest-middleware-jwt)
 
