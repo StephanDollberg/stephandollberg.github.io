@@ -1,0 +1,44 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Header from "../components/Header.astro";
+import { comparePosts, formatPostDate, getPostPath } from "../lib/posts";
+
+const posts = (await getCollection("posts")).sort(comparePosts);
+---
+
+<BaseLayout>
+  <div class="wrapper">
+    <Header />
+
+    <main id="content">
+      <div id="articles">
+        <div class="article-list">
+          {posts.map((post) => (
+            <article class="entry">
+              <div class="entry-content">
+                <header>
+                  <h1 class="entry-title">
+                    <a href={getPostPath(post)}>{post.data.title}</a>
+                  </h1>
+                  <p class="entry-meta">
+                    {formatPostDate(post.data.pubDate)}
+                    {post.data.category && ` • Category: ${post.data.category}`}
+                  </p>
+                </header>
+
+                <div class="entry-body">
+                  <p>{post.data.description}</p>
+                  <p>
+                    <a href={getPostPath(post)}>Read more</a>
+                  </p>
+                </div>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </main>
+  </div>
+</BaseLayout>
+

@@ -1,0 +1,24 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Header from "../components/Header.astro";
+---
+
+<BaseLayout title="404 – Infinity" description="You have reached infinity but nothing is there.">
+  <div class="wrapper">
+    <Header />
+
+    <main id="content">
+      <article class="entry entry-single">
+        <div class="entry-content">
+          <header>
+            <h1 class="entry-title">404 – Infinity</h1>
+          </header>
+
+          <div class="entry-body prose">
+            <p>You have reached infinity but nothing is there.</p>
+          </div>
+        </div>
+      </article>
+    </main>
+  </div>
+</BaseLayout>

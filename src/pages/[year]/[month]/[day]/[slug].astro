@@ -1,0 +1,64 @@
+---
+import { getCollection, render } from "astro:content";
+import type { CollectionEntry } from "astro:content";
+import Disqus from "../../../../components/Disqus.astro";
+import Header from "../../../../components/Header.astro";
+import BaseLayout from "../../../../layouts/BaseLayout.astro";
+import { formatPostDate, getPostPath } from "../../../../lib/posts";
+import { SITE } from "../../../../site";
+
+type Post = CollectionEntry<"posts">;
+
+export async function getStaticPaths() {
+  const posts = await getCollection("posts");
+
+  return posts.map((post) => ({
+    params: {
+      year: String(post.data.pubDate.getUTCFullYear()),
+      month: String(post.data.pubDate.getUTCMonth() + 1).padStart(2, "0"),
+      day: String(post.data.pubDate.getUTCDate()).padStart(2, "0"),
+      slug: post.id,
+    },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+---
+
+<BaseLayout title={post.data.title} description={post.data.description}>
+  <div class="wrapper">
+    <Header />
+
+    <main id="content">
+      <article class="entry entry-single">
+        <div class="entry-content">
+          <p class="post-backlink">
+            <a href="/">Back to all posts</a>
+          </p>
+
+          <header>
+            <h1 class="entry-title">
+              <a href={getPostPath(post)}>{post.data.title}</a>
+            </h1>
+            <p class="entry-meta">
+              {formatPostDate(post.data.pubDate)}
+              {post.data.category && ` • Category: ${post.data.category}`}
+            </p>
+          </header>
+
+          <div class="entry-body prose">
+            <Content />
+          </div>
+        </div>
+      </article>
+
+      {post.data.comments && (
+        <div class="comments-block">
+          <Disqus shortname={SITE.disqusShortname} />
+        </div>
+      )}
+    </main>
+  </div>
+</BaseLayout>
