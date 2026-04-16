@@ -6,5 +6,8 @@ export default defineConfig({
   output: "static",
   trailingSlash: "always",
   integrations: [sitemap()],
+  redirects: {
+    "/about/": "/",
+  },
 });
 
