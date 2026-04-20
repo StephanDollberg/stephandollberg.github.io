@@ -5,7 +5,7 @@ export default defineConfig({
   site: "https://dollberg.xyz",
   output: "static",
   trailingSlash: "always",
-  integrations: [sitemap()],
+  integrations: [sitemap({ lastmod: new Date() })],
   redirects: {
     "/about/": "/",
   },

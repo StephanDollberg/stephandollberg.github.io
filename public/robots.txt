@@ -5,3 +5,5 @@ User-agent: *
 Disallow: /twistedcpp/
 Disallow: /Boost-Tutorials/
 Disallow: /tmp/
+
+Sitemap: https://dollberg.xyz/sitemap-index.xml
